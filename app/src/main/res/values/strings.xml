@@ -3,5 +3,5 @@
     <string name="search_hint">First Name:</string>
     <string name="action_settings"></string>
     <string name="search">Search</string>
-
+    <string name="result">%1$d result(s):</string>
 </resources>

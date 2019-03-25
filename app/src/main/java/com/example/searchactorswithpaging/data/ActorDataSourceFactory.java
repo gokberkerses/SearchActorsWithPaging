@@ -8,13 +8,13 @@ import com.example.searchactorswithpaging.model.Actor;
 
 public class ActorDataSourceFactory extends DataSource.Factory{
 
-    private MutableLiveData < PageKeyedDataSource<Integer, Actor> > actorLiveDataSource
-        = new MutableLiveData<>() ;
+    private MutableLiveData < PageKeyedDataSource<Integer, Actor> > actorLiveDataSource ;
 
     @Override
     public DataSource<Integer, Actor> create(){
         ActorDataSource actorDataSource = new ActorDataSource() ;
 
+        actorLiveDataSource = MutableData.getInstance().getLiveDataByQueryState();
         actorLiveDataSource.postValue(actorDataSource) ;
 
         return actorDataSource ;
@@ -23,6 +23,7 @@ public class ActorDataSourceFactory extends DataSource.Factory{
     MutableLiveData < PageKeyedDataSource<Integer, Actor> >
         getActorLiveDataSource() {
 
+        actorLiveDataSource = MutableData.getInstance().getLiveDataByQueryState();
         return actorLiveDataSource ;
     }
 

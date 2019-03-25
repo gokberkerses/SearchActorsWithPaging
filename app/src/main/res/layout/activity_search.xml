@@ -6,10 +6,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SearchActivity">
+    tools:context=".SearchActivity"
+    android:id="@+id/search_activity">
+
+    <TextView
+        android:id="@+id/results_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold|italic"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerviewS"
+        android:layout_below="@+id/results_number"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

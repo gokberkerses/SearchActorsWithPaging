@@ -20,15 +20,19 @@ import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
 
 import com.example.searchactorswithpaging.data.ActorViewModel;
+import com.example.searchactorswithpaging.data.QueryState;
 import com.example.searchactorswithpaging.model.Actor;
 import com.example.searchactorswithpaging.ui.ActorItemAdapter;
 
+
 public class MainActivity extends AppCompatActivity {
+    private static final String TAG = "MainActivity";
 
     RecyclerView recyclerView ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate: ");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -38,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
 
         ActorViewModel actorViewModel
                 = ViewModelProviders.of(this).get(ActorViewModel.class) ;
+
+        QueryState.getInstance() ;
 
         final ActorItemAdapter adapter = new ActorItemAdapter(this) ;
 

@@ -9,7 +9,7 @@
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/search_hint"
-        appcompat:showAsAction="always"
+        appcompat:showAsAction="always|withText"
         app:actionViewClass="android.widget.SearchView" />
 
 </menu>
